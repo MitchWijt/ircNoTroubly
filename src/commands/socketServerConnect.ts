@@ -20,6 +20,7 @@ async function connectToSocketServer(options: any) {
 }
 
 function openTerminal() {
+    // TODO: make sure Terminals are also opened on Linux and Windows systems.
     let openTerminalAtPath = spawn ('open', [ '-a', 'Terminal', join(__dirname, "../../src") ]);
     openTerminalAtPath.on ('error', (err) => { console.log (err); });
 }

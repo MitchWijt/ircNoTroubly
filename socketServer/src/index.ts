@@ -13,8 +13,9 @@ const io = new SocketServer(httpServer)
 io.on('connection', (socket: any) => {
     io.emit('connected', 'user has connected')
 
-    socket.on('message', (args: any) => {
+    socket.on('message', (args: any, callback: any) => {
         io.sockets.emit('message', args)
+        callback(null, 'event emitted')
     })
 })
 

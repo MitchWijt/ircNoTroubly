@@ -8,7 +8,6 @@ export {
     connectToSocketServer
 }
 
-
 async function connectToSocketServer(options: any) {
     set("username", options.username)
 

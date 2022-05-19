@@ -18,4 +18,10 @@ program
     .description("Connect to an IRC socket server")
     .action(connectToSocketServer)
 
+// program
+//     .command("send-message")
+//     .requiredOption('-msg, --message <message>', "Your message")
+//     .description("Send message to the IRC socket server")
+//     .action(sendMessageToSocketServer)
+
 program.parse()

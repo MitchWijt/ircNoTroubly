@@ -14,8 +14,8 @@ async function connectToSocketServer(options: any) {
 
     listenToMessages(options.url)
 
-    // use this terminal to send the messages.
     console.log("👉 Use the new terminal to send your messages")
+    console.log("🎉 Welcome to the chat room!")
     openTerminal()
 }
 

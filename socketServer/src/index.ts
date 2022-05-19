@@ -10,11 +10,11 @@ const app = express()
 const httpServer = new HttpServer(app)
 const io = new SocketServer(httpServer)
 
-io.on('connection', () => {
+io.on('connection', (socket: any) => {
     io.emit('connected', 'user has connected')
 
-    io.on('message', (args: any) => {
-        io.emit('message', args)
+    socket.on('message', (args: any) => {
+        io.sockets.emit('message', args)
     })
 })
 

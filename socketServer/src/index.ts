@@ -20,7 +20,7 @@ io.on('connection', (socket: any) => {
 })
 
 app.get("/", (req, res) => {
-    res.json({ success: process.env.UNIX })
+    res.json({ success: true })
 })
 
 httpServer.listen(PORT, () => console.log(`Listening on port ${PORT}`))

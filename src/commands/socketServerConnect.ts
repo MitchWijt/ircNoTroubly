@@ -1,6 +1,7 @@
 import { spawn } from "child_process";
 import { join } from "path"
 import { io } from "socket.io-client";
+import chalk from 'chalk'
 
 import { set } from "../adapter/config";
 
@@ -27,6 +28,7 @@ function listenToMessages(socketUrl: string) {
     let socket = io(socketUrl)
 
     socket.on("message", (args: any) => {
-        console.log(args)
+        const data = JSON.parse(args)
+        console.log(`${chalk.bold.blue(data.name)}: ${chalk.white(data.message)}`)
     })
 }

@@ -13,3 +13,7 @@ export function get(key: string): any {
 export function remove(key: string) {
     conf.delete(key)
 }
+
+export function clear() {
+    conf.clear()
+}

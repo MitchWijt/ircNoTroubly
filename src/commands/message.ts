@@ -20,6 +20,10 @@ async function sendMessageToSocketServer(options: any) {
     const username = get("username")
     const socketUrl = get("socketServerUrl")
 
+    if(!username || !socketUrl) {
+        throw new Error("Username or SocketURL is undefined")
+    }
+
     const data = <messageBody>{
         messageDetails: {
             name: username,
